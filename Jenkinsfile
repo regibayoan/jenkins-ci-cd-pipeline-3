@@ -6,14 +6,10 @@ dockerImage = ''
 }
 agent { label 'slave1' }
 stages {
-stage('Checkout SCM') {
-steps {
-git branch: 'hotfix', credentialsId: '', url: "https://github.com/regibayoan/jenkins-ci-cd-pipeline-3"
-}
-}
 stage('Cloning our Git') {
 steps {
 git 'https://github.com/regibayoan/jenkins-ci-cd-pipeline-3'
+git branch: 'hotfix', url: 'https://github.com/regibayoan/jenkins-ci-cd-pipeline-3'
 }
 }
 stage('Building our image') {
