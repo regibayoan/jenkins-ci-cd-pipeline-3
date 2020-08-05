@@ -14,6 +14,7 @@ git branch: 'hotfix', url: 'https://github.com/regibayoan/jenkins-ci-cd-pipeline
 }
 stage('Building our image') {
 steps{
+sh "sudo cp /home/ubuntu/index.html /home/ubuntu/workspace/PushToDockerHub"
 script {
 dockerImage = docker.build registry + ":latest"
 }
